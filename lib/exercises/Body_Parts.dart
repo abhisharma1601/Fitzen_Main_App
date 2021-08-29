@@ -10,6 +10,8 @@ import 'package:sizer/sizer.dart';
 import '../main.dart';
 
 class Body_Parts extends StatefulWidget {
+  Body_Parts({@required this.appbar});
+  bool appbar;
   @override
   _Body_PartsState createState() => _Body_PartsState();
 }
@@ -50,13 +52,13 @@ class _Body_PartsState extends State<Body_Parts> {
       inAsyncCall: BlocProvider.of<ChatCubitCubit>(context).state.show,
       progressIndicator: CircularProgressIndicator(),
       child: Scaffold(
-        appBar: AppBar(
+        appBar: widget.appbar ? AppBar(
           backgroundColor: Color(0xff155E63),
           title: Text(
             "Exercises",
             style: TextStyle(color: Colors.white),
           ),
-        ),
+        ):AppBar(toolbarHeight: 0,),
         body: SingleChildScrollView(
             child: Column(
           children: [

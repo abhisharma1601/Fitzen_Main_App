@@ -71,13 +71,13 @@ class _CalculatorState extends State<Calculator> {
             size: 30,
           ),
         ),
-        appBar: AppBar(
-          backgroundColor: Color(0xff155E63),
-          title: Text(
-            "Fitness Calculator",
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
+        // appBar: AppBar(
+        //   backgroundColor: Color(0xff155E63),
+        //   title: Text(
+        //     "Fitness Calculator",
+        //     style: TextStyle(color: Colors.white),
+        //   ),
+        // ),
         body: SingleChildScrollView(
                   child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

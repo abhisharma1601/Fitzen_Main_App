@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../main.dart';
 
 class TMP extends StatefulWidget {
+  TMP({@required this.showappbar});
+  bool showappbar;
   @override
   _TMPState createState() => _TMPState();
 }
@@ -13,13 +15,13 @@ class _TMPState extends State<TMP> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: widget.showappbar ? AppBar(
         title: Text(
           "Transformation Plans",
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Color(0xff155E63),
-      ),
+      ):AppBar(toolbarHeight: 0,),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -530,7 +532,7 @@ class _TMPState extends State<TMP> {
                                             fontSize: 15),
                                       ),
                                     ),
-                                     new ListTile(
+                                    new ListTile(
                                       leading: Icon(
                                         Icons.fiber_manual_record,
                                         color: Colors.black,

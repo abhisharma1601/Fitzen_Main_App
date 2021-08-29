@@ -8,6 +8,8 @@ import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class LogBook extends StatefulWidget {
+  LogBook({@required this.showappbar});
+  bool showappbar;
   @override
   _LogBookState createState() => _LogBookState();
 }
@@ -36,6 +38,8 @@ List<Widget> logboxes = [
 ];
 
 class _LogBookState extends State<LogBook> {
+  bool spinn = false;
+
   @override
   void initState() {
     getlogs();
@@ -43,7 +47,9 @@ class _LogBookState extends State<LogBook> {
   }
 
   Future<void> getlogs() async {
-    BlocProvider.of<ChatCubitCubit>(context).changeshow(true);
+    setState(() {
+      spinn = true;
+    });
     var snap =
         await FirebaseFirestore.instance.collection("Users").doc(cru.uid).get();
     try {
@@ -52,7 +58,11 @@ class _LogBookState extends State<LogBook> {
       await logs.forEach(
         (k, v) => logboxes.add(
           LogBox(
-              fun: () => {setState(() {})},
+              fun: () => {
+                    setState(() {
+                      print("deleted");
+                    })
+                  },
               title: k,
               date: v["Date"].toString().substring(0, 10),
               value: v["Value"]),
@@ -80,8 +90,9 @@ class _LogBookState extends State<LogBook> {
         ),
       ));
     }
-    setState(() {});
-    BlocProvider.of<ChatCubitCubit>(context).changeshow(false);
+    setState(() {
+      spinn = false;
+    });
   }
 
   @override
@@ -90,11 +101,11 @@ class _LogBookState extends State<LogBook> {
     double val;
 
     return ModalProgressHUD(
-       opacity: 0.3,
-          color: Colors.black,
-          inAsyncCall: BlocProvider.of<ChatCubitCubit>(context).state.show,
-          progressIndicator: CircularProgressIndicator(),
-          child: Scaffold(
+      opacity: 0.3,
+      color: Colors.black,
+      inAsyncCall: spinn,
+      progressIndicator: CircularProgressIndicator(),
+      child: Scaffold(
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             showDialog(
@@ -152,7 +163,6 @@ class _LogBookState extends State<LogBook> {
                                           color: Colors.black, fontSize: 18),
                                       textAlign: TextAlign.center,
                                       maxLength: 20,
-                                      
                                       cursorColor: Colors.black,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -215,7 +225,7 @@ class _LogBookState extends State<LogBook> {
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 18),
                                       textAlign: TextAlign.center,
-                                      maxLength: 6,                                      
+                                      maxLength: 6,
                                       cursorColor: Colors.black,
                                       decoration: InputDecoration(
                                         isDense: true,
@@ -284,15 +294,19 @@ class _LogBookState extends State<LogBook> {
             )),
           ),
         ),
-        appBar: AppBar(
-          backgroundColor: Color(0xff155E63),
-          title: Text(
-            "Log Book",
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
+        appBar: widget.showappbar
+            ? AppBar(
+                backgroundColor: Color(0xff155E63),
+                title: Text(
+                  "Log Book",
+                  style: TextStyle(color: Colors.white),
+                ),
+              )
+            : AppBar(
+                toolbarHeight: 0,
+              ),
         body: SingleChildScrollView(
-                  child: Column(
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: logboxes,
           ),
@@ -528,7 +542,6 @@ class LogBox extends StatelessWidget {
           SizedBox(width: 4),
           GestureDetector(
             onTap: () async {
-              BlocProvider.of<ChatCubitCubit>(context).changeshow(true);
               await FirebaseFirestore.instance
                   .collection("Users")
                   .doc(cru.uid)
@@ -543,7 +556,6 @@ class LogBox extends StatelessWidget {
                     .update({"Logs": FieldValue.delete()});
               }
               getlogs();
-              BlocProvider.of<ChatCubitCubit>(context).changeshow(false);
             },
             child: Icon(Icons.delete, size: 35),
           ),

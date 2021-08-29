@@ -50,8 +50,7 @@ class _py_pgState extends State<py_pg> {
   }
 
   void _handlePaymentError(PaymentFailureResponse response) {
-    Navigator.pop(context);
-    Navigator.pop(context);
+    Navigator.pop(context);    
     _showtoast();
   }
 

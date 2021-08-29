@@ -23,118 +23,154 @@ class _Exercise_ScreenState extends State<Exercise_Screen> {
           inAsyncCall: BlocProvider.of<ChatCubitCubit>(context).state.show,
           progressIndicator: CircularProgressIndicator(),
           child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Color(0xff155E63),
-          title: Text(
-            "Excercise Plans",
-            style: TextStyle(color: Colors.white),
+        // appBar: AppBar(
+        //   backgroundColor: Color(0xff155E63),
+        //   title: Text(
+        //     "Excercise Plans",
+        //     style: TextStyle(color: Colors.white),
+        //   ),
+        // ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Pre_Plans()));
+                },
+                child: Container(
+                 height: 165,
+                  margin: EdgeInsets.fromLTRB(10,10,10, 0),
+                  decoration: BoxDecoration(
+                    //border: Border.all(color: Color(0xff155E63),),
+                      image: DecorationImage(
+                          alignment: Alignment.center,
+                          image: AssetImage("Assets/images/premade.jpg"),
+                          fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+                // child: Container(
+                //   margin: EdgeInsets.symmetric(horizontal: 3.2.w,),
+                //   height: 23.96.h,
+                //   decoration: BoxDecoration(
+                //     color: Colors.grey.withOpacity(0.5),
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Row(
+                //     children: [
+                //       Image(
+                //           height: 20.0.h,
+                //           width: 38.0.w,
+                //           image: AssetImage("Assets/images/gym.png")),
+                //       Spacer(),
+                //       Text(
+                //         "Pre-Made\nExercise Plans",
+                //         textAlign: TextAlign.center,
+                //         style: TextStyle(
+                //             color: Color(0xff155E63),
+                //             fontSize: 25,
+                //             fontWeight: FontWeight.w700),
+                //       ),
+                //       SizedBox(width: 4.0.w),
+                //     ],
+                //   ),
+                // ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Body_Parts(appbar: true,)));
+                },
+                 child: Container(
+                  height: 165,
+                  margin: EdgeInsets.fromLTRB(10,10,10, 0),
+                  decoration: BoxDecoration(
+                   // border: Border.all(color: Color(0xff155E63),),
+                      image: DecorationImage(
+                        alignment: Alignment.center,
+                          image: AssetImage("Assets/images/abp.jpg"),
+                          fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+                // child: Container(
+                //   margin: EdgeInsets.symmetric(horizontal: 3.2.w, ),
+                //   height: 23.96.h,
+                //   decoration: BoxDecoration(
+                //     color: Colors.grey.withOpacity(0.5),
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Row(
+                //     children: [
+                //       Image(
+                //           height: 120,
+                //           width: 140,
+                //           image: AssetImage("Assets/images/exe.png")),
+                //       SizedBox(
+                //         width: 20,
+                //       ),
+                //       Text(
+                //         "Body Part\nAll Exercises",
+                //         textAlign: TextAlign.center,
+                //         style: TextStyle(
+                //             color: Color(0xff155E63),
+                //             fontSize: 25,
+                //             fontWeight: FontWeight.w700),
+                //       ),
+                //       SizedBox(width: 15),
+                //     ],
+                //   ),
+                // ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Custom_Plans()));
+                },
+                 child: Container(
+                  height: 165,
+                  margin: EdgeInsets.fromLTRB(10,10,10, 0),
+                  decoration: BoxDecoration(
+                   // border: Border.all(color: Colors.grey,),
+                      image: DecorationImage(
+                        alignment: Alignment.center,
+                          image: AssetImage("Assets/images/custom.jpg"),
+                          fit: BoxFit.cover),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+                // child: Container(
+                //   margin: EdgeInsets.symmetric(horizontal: 12,),
+                //   height: 23.96.h,
+                //   decoration: BoxDecoration(
+                //     color: Colors.grey.withOpacity(0.5),
+                //     borderRadius: BorderRadius.circular(20),
+                //   ),
+                //   child: Row(
+                //     children: [
+                //       Image(
+                //           height: 120,
+                //           width: 140,
+                //           image: AssetImage("Assets/images/customex.png")),
+                //       SizedBox(
+                //         width: 12,
+                //       ),
+                //       Text(
+                //         "Custom\nExercise Plans",
+                //         textAlign: TextAlign.center,
+                //         style: TextStyle(
+                //             color: Color(0xff155E63),
+                //             fontSize: 25,
+                //             fontWeight: FontWeight.w700),
+                //       ),
+                //       SizedBox(width: 12),
+                //     ],
+                //   ),
+                // ),
+              ),
+              SizedBox(height:10)
+            ],
           ),
-        ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Pre_Plans()));
-              },
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 3.2.w,),
-                height: 25.76.h,
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Image(
-                        height: 20.0.h,
-                        width: 38.0.w,
-                        image: AssetImage("Assets/images/gym.png")),
-                    Spacer(),
-                    Text(
-                      "Pre-Made\nExercise Plans",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Color(0xff155E63),
-                          fontSize: 25,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(width: 4.0.w),
-                  ],
-                ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Body_Parts()));
-              },
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 3.2.w, ),
-                height: 25.76.h,
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Image(
-                        height: 120,
-                        width: 140,
-                        image: AssetImage("Assets/images/exe.png")),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text(
-                      "Body Part\nAll Exercises",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Color(0xff155E63),
-                          fontSize: 25,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(width: 15),
-                  ],
-                ),
-              ),
-            ),
-            InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Custom_Plans()));
-              },
-              child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 12,),
-                height: 25.76.h,
-                decoration: BoxDecoration(
-                  color: Colors.grey.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Row(
-                  children: [
-                    Image(
-                        height: 120,
-                        width: 140,
-                        image: AssetImage("Assets/images/customex.png")),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Text(
-                      "Custom\nExercise Plans",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Color(0xff155E63),
-                          fontSize: 25,
-                          fontWeight: FontWeight.w700),
-                    ),
-                    SizedBox(width: 12),
-                  ],
-                ),
-              ),
-            )
-          ],
         ),
       ),
     );

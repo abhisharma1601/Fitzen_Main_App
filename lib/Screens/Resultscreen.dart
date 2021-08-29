@@ -85,7 +85,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         "BMI",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 4.5.h,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 1.0.h),
@@ -94,7 +94,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         child: Text(
                           "Your BMI is ${widget.bmi.round()}, which falls under the category of ${widget.bmilist[0]} weight. You are ${widget.bmilist[1]} according to your BMI",
                           style:
-                              TextStyle(color: Colors.black, fontSize: 2.6.h),
+                              TextStyle(color: Colors.black, fontSize: 17),
                         ),
                       )
                     ],
@@ -107,7 +107,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         "Fat %",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 4.5.h,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 5),
@@ -116,7 +116,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         child: Text(
                           "Total fat constitutes of : ${widget.fat.round()} Kg",
                           style:
-                              TextStyle(color: Colors.black, fontSize: 2.6.h),
+                              TextStyle(color: Colors.black, fontSize: 17),
                         ),
                       ),
                       Container(
@@ -124,7 +124,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         child: Text(
                           "Total muscle mass : ${widget.muscle.round()} Kg",
                           style:
-                              TextStyle(color: Colors.black, fontSize: 2.6.h),
+                              TextStyle(color: Colors.black, fontSize: 17),
                         ),
                       ),
                       Container(
@@ -132,7 +132,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         child: Text(
                           "Fat percentage : ${widget.fatper}%",
                           style:
-                              TextStyle(color: Colors.black, fontSize: 2.6.h),
+                              TextStyle(color: Colors.black, fontSize: 17),
                         ),
                       ),
                     ],
@@ -145,7 +145,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         "Calories ?",
                         style: TextStyle(
                             color: Colors.black,
-                            fontSize: 4.5.h,
+                            fontSize: 30,
                             fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 5),
@@ -154,7 +154,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         child: Text(
                           "Calories you need to maintain : ${widget.calories.round()}",
                           style:
-                              TextStyle(color: Colors.black, fontSize: 2.6.h),
+                              TextStyle(color: Colors.black, fontSize: 17),
                         ),
                       ),
                       Container(
@@ -162,7 +162,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         child: Text(
                           "Calories to gain 0.5kg / week : ${widget.calup.round()}",
                           style:
-                              TextStyle(color: Colors.black, fontSize: 2.6.h),
+                              TextStyle(color: Colors.black, fontSize: 17),
                         ),
                       ),
                       Container(
@@ -170,7 +170,7 @@ class _ResultScreenState extends State<ResultScreen> {
                         child: Text(
                           "Calories to loose 0.5kg / week : ${widget.caldown.round()}",
                           style:
-                              TextStyle(color: Colors.black, fontSize: 2.6.h),
+                              TextStyle(color: Colors.black, fontSize: 17),
                         ),
                       ),
                     ],

@@ -58,23 +58,23 @@ class _ProfileState extends State<Profile> {
       color: Colors.black,
       inAsyncCall: BlocProvider.of<ChatCubitCubit>(context).state.show,
       progressIndicator: CircularProgressIndicator(),
-      child: Scaffold(
-        
-        // appBar: AppBar(
-        //   backgroundColor: Color(0xff155E63),
-        //   title: Text(
-        //     "Profile",
-        //     style: TextStyle(color: Colors.white),
-        //   ),
-        // ),
+      child: Scaffold(        
+        appBar: AppBar(
+          backgroundColor: Color(0xff155E63),
+          title: Text(
+            "Profile",
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
         body: SafeArea(
                   child: Column(
             children: [
               Container(                
                 margin: EdgeInsets.all(5),
                 //height: 22.0.h,
+                
                 decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.03),
+                    color: Colors.white,
                     borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   children: [
@@ -254,7 +254,7 @@ class _ProfileState extends State<Profile> {
               // ),
               SizedBox(height: 22,),
               Container(                
-                padding: EdgeInsets.fromLTRB(2.0.h, 1.3.h,1.3.h,1.3.h),
+                padding: EdgeInsets.fromLTRB(1.0.h, 1.3.h,1.0.h,1.3.h),
                 child: Column(
                   children: [
                     GestureDetector(
@@ -293,7 +293,7 @@ class _ProfileState extends State<Profile> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LogBook(),
+                              builder: (context) => LogBook(showappbar: true,),
                             ));
                       },
                       child: Row(
@@ -322,7 +322,7 @@ class _ProfileState extends State<Profile> {
                     GestureDetector(
                       onTap: () {
                         Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => TMP()));
+                            MaterialPageRoute(builder: (context) => TMP(showappbar: true,)));
                       },
                       child: Row(
                         children: [

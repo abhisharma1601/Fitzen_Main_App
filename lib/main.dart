@@ -63,22 +63,29 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> getadsbool() async {
-    try {
-      var snap = await FirebaseFirestore.instance
-          .collection("Users")
-          .doc(FirebaseAuth.instance.currentUser.uid)
-          .get();
-      print("this is bool");
-      print((snap.data() as dynamic)["Bought"]["Ads"]);
-      if (snap.data()["Bought"]["Ads"]) {
+    var snap = await FirebaseFirestore.instance
+        .collection("App_Data")
+        .doc("Ads")
+        .get();
+    bool adboool = snap.data()["ad_bool"];
+    if (adboool) {
+      try {
+        var snap = await FirebaseFirestore.instance
+            .collection("Users")
+            .doc(FirebaseAuth.instance.currentUser.uid)
+            .get();
+        print("this is bool");
+        print((snap.data() as dynamic)["Bought"]["Ads"]);
+        if (snap.data()["Bought"]["Ads"]) {
+          adsbool = true;
+        } else if (!(snap.data() as dynamic)["Bought"]["Ads"]) {
+          adsbool = false;
+        }
+      } catch (e) {
         adsbool = true;
-      } else if (!(snap.data() as dynamic)["Bought"]["Ads"]) {
-        adsbool = false;
       }
-    } catch (e) {
-      print("error caught on camera");
-      print(e);
-      adsbool = true;
+    } else {
+      adsbool = false;
     }
   }
 

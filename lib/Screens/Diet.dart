@@ -10,13 +10,13 @@ class _Diet_PlanState extends State<Diet_Plan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Diet Plans",
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Color(0xff155E63),
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     "Diet Plans",
+      //     style: TextStyle(color: Colors.white),
+      //   ),
+      //   backgroundColor: Color(0xff155E63),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
