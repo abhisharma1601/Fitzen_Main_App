@@ -81,7 +81,7 @@ class _ProfileState extends State<Profile> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 18,
+                      height: 15,
                     ),
                     GestureDetector(
                       onTap: () async {
@@ -223,10 +223,10 @@ class _ProfileState extends State<Profile> {
                       },
                       child: CircleAvatar(
                         backgroundColor: Colors.grey,
-                        radius: 18.5.w,
+                        radius: 16.5.w,
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
-                          radius: 18.0.w,
+                          radius: 16.0.w,
                           backgroundImage: NetworkImage(profilepic),
                         ),
                       ),
@@ -241,7 +241,7 @@ class _ProfileState extends State<Profile> {
                         Text(
                           name,
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 24),
+                              fontWeight: FontWeight.bold, fontSize: 26),
                         ),
                         SizedBox(height: 2),
                         FittedBox(
