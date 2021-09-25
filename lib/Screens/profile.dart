@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:Fitzen/Screens/LogBook.dart';
+import 'package:Fitzen/Screens/report_issue.dart';
 import 'package:Fitzen/Transformations/MainPage.dart';
 import 'package:Fitzen/cubit/chat_cubit_cubit.dart';
 import 'package:Fitzen/exercises/Custom_Plans.dart';
@@ -74,14 +75,13 @@ class _ProfileState extends State<Profile> {
               Container(
                 margin: EdgeInsets.all(5),
                 //height: 22.0.h,
-
                 decoration: BoxDecoration(
                     color: Colors.transparent,
                     borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 15,
+                      height: 10,
                     ),
                     GestureDetector(
                       onTap: () async {
@@ -362,24 +362,32 @@ class _ProfileState extends State<Profile> {
                     SizedBox(
                       height: 23,
                     ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: 2.0.w,
-                        ),
-                        Icon(
-                          Icons.rate_review,
-                          color: Color(0xff19535F),
-                          size: 7.0.w,
-                        ),
-                        SizedBox(
-                          width: 2.0.h,
-                        ),
-                        Text(
-                          "Rate App",
-                          style: TextStyle(fontSize: 2.5.h),
-                        )
-                      ],
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Issue_Collector()));
+                      },
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 2.0.w,
+                          ),
+                          Icon(
+                            Icons.rate_review,
+                            color: Color(0xff19535F),
+                            size: 7.0.w,
+                          ),
+                          SizedBox(
+                            width: 2.0.h,
+                          ),
+                          Text(
+                            "Report Issue",
+                            style: TextStyle(fontSize: 2.5.h),
+                          )
+                        ],
+                      ),
                     ),
                     SizedBox(
                       height: 23,
