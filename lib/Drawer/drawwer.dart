@@ -58,7 +58,9 @@ class _drawerState extends State<drawer> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => TMP(showappbar: true,),
+                    builder: (context) => TMP(
+                      showappbar: true,
+                    ),
                   ),
                 );
               },
@@ -74,7 +76,9 @@ class _drawerState extends State<drawer> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LogBook(showappbar: true,),
+                    builder: (context) => LogBook(
+                      showappbar: true,
+                    ),
                   ),
                 );
               },

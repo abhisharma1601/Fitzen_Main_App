@@ -18,11 +18,11 @@ class _Exercise_ScreenState extends State<Exercise_Screen> {
   @override
   Widget build(BuildContext context) {
     return ModalProgressHUD(
-       opacity: 0.3,
-          color: Colors.black,
-          inAsyncCall: BlocProvider.of<ChatCubitCubit>(context).state.show,
-          progressIndicator: CircularProgressIndicator(),
-          child: Scaffold(
+      opacity: 0.3,
+      color: Colors.black,
+      inAsyncCall: BlocProvider.of<ChatCubitCubit>(context).state.show,
+      progressIndicator: CircularProgressIndicator(),
+      child: Scaffold(
         // appBar: AppBar(
         //   backgroundColor: Color(0xff155E63),
         //   title: Text(
@@ -41,10 +41,12 @@ class _Exercise_ScreenState extends State<Exercise_Screen> {
                       MaterialPageRoute(builder: (context) => Pre_Plans()));
                 },
                 child: Container(
-                 height: 165,
-                  margin: EdgeInsets.fromLTRB(10,10,10, 0),
+                  height: 190,
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   decoration: BoxDecoration(
-                    //border: Border.all(color: Color(0xff155E63),),
+                      // border: Border.all(
+                      //   color: Color(0xff155E63),
+                      // ),
                       image: DecorationImage(
                           alignment: Alignment.center,
                           image: AssetImage("Assets/images/premade.jpg"),
@@ -80,16 +82,22 @@ class _Exercise_ScreenState extends State<Exercise_Screen> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Body_Parts(appbar: true,)));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Body_Parts(
+                                appbar: true,
+                              )));
                 },
-                 child: Container(
-                  height: 165,
-                  margin: EdgeInsets.fromLTRB(10,10,10, 0),
+                child: Container(
+                  height: 190,
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   decoration: BoxDecoration(
-                   // border: Border.all(color: Color(0xff155E63),),
+                      // border: Border.all(
+                      //   color: Color(0xff155E63),
+                      // ),
                       image: DecorationImage(
-                        alignment: Alignment.center,
+                          alignment: Alignment.center,
                           image: AssetImage("Assets/images/abp.jpg"),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(20)),
@@ -128,13 +136,15 @@ class _Exercise_ScreenState extends State<Exercise_Screen> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => Custom_Plans()));
                 },
-                 child: Container(
-                  height: 165,
-                  margin: EdgeInsets.fromLTRB(10,10,10, 0),
+                child: Container(
+                  height: 190,
+                  margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
                   decoration: BoxDecoration(
-                   // border: Border.all(color: Colors.grey,),
+                      // border: Border.all(
+                      //   color: Color(0xff155E63),
+                      // ),
                       image: DecorationImage(
-                        alignment: Alignment.center,
+                          alignment: Alignment.center,
                           image: AssetImage("Assets/images/custom.jpg"),
                           fit: BoxFit.cover),
                       borderRadius: BorderRadius.circular(20)),
@@ -168,7 +178,7 @@ class _Exercise_ScreenState extends State<Exercise_Screen> {
                 //   ),
                 // ),
               ),
-              SizedBox(height:10)
+              SizedBox(height: 10)
             ],
           ),
         ),

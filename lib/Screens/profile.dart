@@ -7,11 +7,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:sizer/sizer.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../main.dart';
 
 class Profile extends StatefulWidget {
@@ -58,7 +60,7 @@ class _ProfileState extends State<Profile> {
       color: Colors.black,
       inAsyncCall: BlocProvider.of<ChatCubitCubit>(context).state.show,
       progressIndicator: CircularProgressIndicator(),
-      child: Scaffold(        
+      child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xff155E63),
           title: Text(
@@ -67,19 +69,19 @@ class _ProfileState extends State<Profile> {
           ),
         ),
         body: SafeArea(
-                  child: Column(
+          child: Column(
             children: [
-              Container(                
+              Container(
                 margin: EdgeInsets.all(5),
                 //height: 22.0.h,
-                
+
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Colors.transparent,
                     borderRadius: BorderRadius.circular(10)),
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 20,
+                      height: 18,
                     ),
                     GestureDetector(
                       onTap: () async {
@@ -87,8 +89,8 @@ class _ProfileState extends State<Profile> {
                             "https://static.thenounproject.com/png/187803-200.png") {
                           BlocProvider.of<ChatCubitCubit>(context)
                               .changeshow(true);
-                          final pickedFile =
-                              await picker.getImage(source: ImageSource.gallery);
+                          final pickedFile = await picker.getImage(
+                              source: ImageSource.gallery);
                           setState(() async {
                             if (pickedFile != null) {
                               _image = File(pickedFile.path);
@@ -172,8 +174,8 @@ class _ProfileState extends State<Profile> {
                                                                 .gallery);
                                                     setState(() async {
                                                       if (pickedFile != null) {
-                                                        _image =
-                                                            File(pickedFile.path);
+                                                        _image = File(
+                                                            pickedFile.path);
                                                         var reference =
                                                             FirebaseStorage
                                                                 .instance
@@ -187,17 +189,20 @@ class _ProfileState extends State<Profile> {
                                                             await (await uploadTask)
                                                                 .ref
                                                                 .getDownloadURL();
-                                                        FirebaseFirestore.instance
+                                                        FirebaseFirestore
+                                                            .instance
                                                             .collection("Users")
                                                             .doc(cru.getuid())
                                                             .set(
                                                                 {
                                                               "Data": {
-                                                                "Profile_Pic": url
+                                                                "Profile_Pic":
+                                                                    url
                                                               }
                                                             },
                                                                 SetOptions(
-                                                                    merge: true));
+                                                                    merge:
+                                                                        true));
                                                         data();
                                                         Navigator.pop(context);
                                                       } else {
@@ -217,8 +222,8 @@ class _ProfileState extends State<Profile> {
                         }
                       },
                       child: CircleAvatar(
-                        backgroundColor: Colors.black,
-                        radius: 18.2.w,
+                        backgroundColor: Colors.grey,
+                        radius: 18.5.w,
                         child: CircleAvatar(
                           backgroundColor: Colors.white,
                           radius: 18.0.w,
@@ -240,10 +245,12 @@ class _ProfileState extends State<Profile> {
                         ),
                         SizedBox(height: 2),
                         FittedBox(
-                            child: Text(
-                          cru.getpara(),
-                          style: TextStyle(fontWeight: FontWeight.w500,fontSize: 16),
-                        ))
+                          child: Text(
+                            cru.getpara(),
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500, fontSize: 16),
+                          ),
+                        )
                       ],
                     ),
                   ],
@@ -252,9 +259,11 @@ class _ProfileState extends State<Profile> {
               // Divider(
               //   color: Colors.black,
               // ),
-              SizedBox(height: 22,),
-              Container(                
-                padding: EdgeInsets.fromLTRB(1.0.h, 1.3.h,1.0.h,1.3.h),
+              SizedBox(
+                height: 12,
+              ),
+              Container(
+                padding: EdgeInsets.fromLTRB(1.0.h, 1.3.h, 1.0.h, 1.3.h),
                 child: Column(
                   children: [
                     GestureDetector(
@@ -293,7 +302,9 @@ class _ProfileState extends State<Profile> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LogBook(showappbar: true,),
+                              builder: (context) => LogBook(
+                                showappbar: true,
+                              ),
                             ));
                       },
                       child: Row(
@@ -321,8 +332,12 @@ class _ProfileState extends State<Profile> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => TMP(showappbar: true,)));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TMP(
+                                      showappbar: true,
+                                    )));
                       },
                       child: Row(
                         children: [
@@ -395,7 +410,15 @@ class _ProfileState extends State<Profile> {
               //ade.checkforad(),
               Padding(
                 padding: EdgeInsets.all(2.0.h),
-                child: Text("v 0.0.1"),
+                child: GestureDetector(
+                    onTap: () {
+                      launch("https://stackx.online");
+                    },
+                    child: Text(
+                      "By StackX",
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    )),
               )
             ],
           ),

@@ -22,6 +22,9 @@ class _Daily_PostState extends State<Daily_Post> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(
+            height: 10,
+          ),
           Container(
             margin: EdgeInsets.all(8),
             child: Image(

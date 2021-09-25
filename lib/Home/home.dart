@@ -5,7 +5,7 @@ import 'package:Fitzen/exercises/Body_Parts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:sizer/sizer.dart';
 import '../main.dart';
 
 class Home_Page extends StatefulWidget {
@@ -132,7 +132,7 @@ class _Home_PageState extends State<Home_Page> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 416,
+                    height: 62.0.h,
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: Column(

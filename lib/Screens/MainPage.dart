@@ -29,7 +29,12 @@ class _Main_PageState extends State<Main_Page> {
     //   showappbar: false,
     // ));
     widlist.add(Exercise_Screen());
-    widlist.add(Home_Page(done: false,name: "",quote: "Loading...",url: "https://miro.medium.com/max/1080/0*DqHGYPBA-ANwsma2.gif",));
+    widlist.add(Home_Page(
+      done: false,
+      name: "",
+      quote: "Loading...",
+      url: "https://miro.medium.com/max/1080/0*DqHGYPBA-ANwsma2.gif",
+    ));
     widlist.add(Diet_Plan());
     widlist.add(LogBook(
       showappbar: false,
@@ -53,7 +58,7 @@ class _Main_PageState extends State<Main_Page> {
         drawer: Drawer(
           child: drawer(),
         ),
-        appBar:  AppBar(
+        appBar: AppBar(
           title: Text(
             "FitZen",
             style: TextStyle(color: Colors.white),
@@ -79,7 +84,7 @@ class _Main_PageState extends State<Main_Page> {
           ],
         ),
         bottomNavigationBar: Container(
-          color:  Color(0xff155E63),
+          color: Color(0xff155E63),
           child: SalomonBottomBar(
               itemShape: StadiumBorder(),
               currentIndex: index,
@@ -94,42 +99,23 @@ class _Main_PageState extends State<Main_Page> {
                 SalomonBottomBarItem(
                   icon: Icon(Icons.calculate_sharp),
                   title: Text("Calculator"),
-                  
                 ),
                 SalomonBottomBarItem(
                   icon: Icon(Icons.fitness_center),
                   title: Text("Exercises"),
-                  
                 ),
                 SalomonBottomBarItem(
                   icon: Icon(Icons.home),
                   title: Text("Home"),
-                 
                 ),
                 SalomonBottomBarItem(
                   icon: Icon(Icons.food_bank),
                   title: Text("Diet Plans"),
-                  
                 ),
                 SalomonBottomBarItem(
                   icon: Icon(Icons.fact_check),
                   title: Text("Log Book"),
-                  
                 ),
-                // BottomNavigationBarItem(
-                //     icon: Icon(Icons.calculate_sharp), label: "Calculator"),
-                // BottomNavigationBarItem(
-                //     icon: Icon(Icons.track_changes), label: "Transformation"),
-                //       BottomNavigationBarItem(
-                //     icon: Icon(Icons.fitness_center), label: "Exercises"),
-                // BottomNavigationBarItem(
-                //     icon: Icon(Icons.food_bank), label: "Diet Plans"),
-                // BottomNavigationBarItem(
-                //     icon: Icon(Icons.fact_check), label: "Log Book"),
-                //  BottomNavigationBarItem(
-                //   icon: Icon(Icons.ac_unit),
-                //   label: "Corona Data"
-                // ),
               ]),
         ),
         body: widlist[index],
