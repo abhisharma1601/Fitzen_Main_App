@@ -109,30 +109,13 @@ class _Home_PageState extends State<Home_Page> {
                 ],
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-            //   child: Column(
-            //     crossAxisAlignment: CrossAxisAlignment.start,
-            //     children: [
-            //       Container(
-            //         height: 380,
-            //         decoration:
-            //             BoxDecoration(borderRadius: BorderRadius.circular(10)),
-            //         child: Expanded(
-            //             child: Body_Parts(
-            //           appbar: true,
-            //         )),
-            //       ),
-            //     ],
-            //   ),
-            // ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 62.0.h,
+                    height: 51.0.h,
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(10)),
                     child: Column(
@@ -183,7 +166,6 @@ class _Home_PageState extends State<Home_Page> {
                 ],
               ),
             ),
-
             SizedBox(height: 10),
           ],
         ),

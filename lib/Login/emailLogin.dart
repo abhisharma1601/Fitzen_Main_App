@@ -165,7 +165,7 @@ class _SignInState extends State<SignIn> {
                           bool basic = await snap.data()["Basic_Details"];
                           print(basic);
                           if (basic) {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => Main_Page(),

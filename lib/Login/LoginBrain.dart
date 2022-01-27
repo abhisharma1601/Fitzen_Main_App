@@ -37,7 +37,7 @@ Future<void> loginUser(int type, context) async {
           bool basic = await snap.data()["Basic_Details"];
           print(basic);
           if (basic) {
-            Navigator.push(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
                 builder: (context) => Main_Page(),
@@ -166,7 +166,7 @@ Future<void> loginUser(int type, context) async {
                                   bool basic =
                                       await snap.data()["Basic_Details"];
                                   if (basic) {
-                                    Navigator.push(
+                                    Navigator.pushReplacement(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => Main_Page(),
@@ -272,7 +272,7 @@ Future<void> loginUser(int type, context) async {
       bool basic = await snap.data()["Basic_Details"];
       print(basic);
       if (basic) {
-        Navigator.push(
+        Navigator.pushReplacement(
           context,
           MaterialPageRoute(
             builder: (context) => Main_Page(),

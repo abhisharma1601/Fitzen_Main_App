@@ -69,6 +69,7 @@ class _MyAppState extends State<MyApp> {
         .get();
     bool adboool = snap.data()["ad_bool"];
     if (adboool) {
+      print("Ads_ON");
       try {
         var snap = await FirebaseFirestore.instance
             .collection("Users")

@@ -20,21 +20,22 @@ class _drawerState extends State<drawer> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        SizedBox(height: 4.0.h),
+        SizedBox(height: 5.0.h),
         Padding(
           padding: EdgeInsets.only(top: 0),
           child: Container(
-            height: 27.0.h,
+            height: 25.0.h,
+            margin: EdgeInsets.all(10),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(0),
+              borderRadius: BorderRadius.circular(20),
               image: DecorationImage(
                   image: AssetImage("Assets/images/ps.jpg"), fit: BoxFit.cover),
             ),
           ),
         ),
-        SizedBox(height: 2.0.h),
+        SizedBox(height: 1.0.h),
         Padding(
-          padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 2.0.h),
+          padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 1.5.h),
           child: GestureDetector(
             onTap: () async {
               Navigator.push(
@@ -52,7 +53,7 @@ class _drawerState extends State<drawer> {
           ),
         ),
         Padding(
-            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 2.0.h),
+            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 1.5.h),
             child: GestureDetector(
               onTap: () async {
                 Navigator.push(
@@ -70,7 +71,7 @@ class _drawerState extends State<drawer> {
                   color: Color(0xff4A001F)),
             )),
         Padding(
-            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 2.0.h),
+            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 1.5.h),
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -86,7 +87,7 @@ class _drawerState extends State<drawer> {
                   icon: Icons.save, text: "Logs", color: Color(0xff003459)),
             )),
         Padding(
-            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 2.0.h),
+            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 1.5.h),
             child: GestureDetector(
               onTap: () {
                 soon();
@@ -97,14 +98,14 @@ class _drawerState extends State<drawer> {
                   color: Color(0xff494947)),
             )),
         Padding(
-            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 2.0.h),
+            padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 1.5.h),
             child: GestureDetector(
               onTap: () {},
               child: Drawer_wig(
                   icon: Icons.book, text: "Blogs", color: Color(0xff69140E)),
             )),
         Padding(
-          padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 2.0.h),
+          padding: EdgeInsets.fromLTRB(3.0.w, 2.0.h, 4.0.w, 1.5.h),
           child: GestureDetector(
             child: GestureDetector(
               onTap: () {},

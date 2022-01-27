@@ -25,9 +25,6 @@ class _Main_PageState extends State<Main_Page> {
 
   void push_body() {
     widlist.add(Calculator());
-    // widlist.add(TMP(
-    //   showappbar: false,
-    // ));
     widlist.add(Exercise_Screen());
     widlist.add(Home_Page(
       done: false,
